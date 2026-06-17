@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "Expo",
+      "path": "expo",
+      "framework": "react-native"
+    },
+    {
+      "name": "iOS",
+      "path": "ios",
+      "framework": "swift",
+      "settings": {
+        "displayName": "Dev"
+      }
+    }
+  ],
+  "$schema": "https://rork.com/schema/rork.json"
+}
