@@ -6,7 +6,10 @@
     "start": "bunx rork start -p sqyzvx036izu9xcnewxg8 --tunnel",
     "start-web": "bunx rork start -p sqyzvx036izu9xcnewxg8 --web --tunnel",
     "start-web-dev": "DEBUG=expo* bunx rork start -p sqyzvx036izu9xcnewxg8 --web --tunnel",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "build": "npx expo export --platform web",
+    "serve": "node server.mjs",
+    "build:railway": "bash scripts/build-railway.sh"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -55,5 +58,8 @@
     "eslint-config-expo": "~10.0.0",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }

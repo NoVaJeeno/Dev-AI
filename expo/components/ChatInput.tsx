@@ -15,7 +15,7 @@ import {
 import { Send, X, Plus, ImageIcon, FileText, Camera, Loader, Square } from 'lucide-react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 import { theme } from '@/constants/theme';
 
 const MAX_IMAGE_DIMENSION = 1024;

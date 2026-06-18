@@ -13,7 +13,7 @@ import {
 import { useStorage } from '@/providers/StorageProvider';
 import { theme } from '@/constants/theme';
 import { executeCommand } from '@/utils/sandboxEngine';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 
 type ActiveTool = 'terminal' | 'deploy' | 'api' | 'snippets' | 'generator';
 

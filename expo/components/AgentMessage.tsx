@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { View, Text, StyleSheet, Animated, TouchableOpacity, Platform, Alert } from 'react-native';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 import {
   Bot,
   User,

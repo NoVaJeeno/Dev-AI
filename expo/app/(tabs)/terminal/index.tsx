@@ -11,7 +11,7 @@ import {
 import { theme } from '@/constants/theme';
 import { useStorage } from '@/providers/StorageProvider';
 import { executeCommand } from '@/utils/sandboxEngine';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 import * as Clipboard from 'expo-clipboard';
 
 interface TerminalLine {

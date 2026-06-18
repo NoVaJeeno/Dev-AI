@@ -1,0 +1,14 @@
+# Nixpacks configuration for Railway deployment
+# Uses build-railway.sh which handles env generation + expo export
+
+[phases.setup]
+nixPkgs = ["nodejs_22", "bun", "bash"]
+
+[phases.install]
+cmds = ["bun install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["bash scripts/build-railway.sh"]
+
+[start]
+cmd = "node server.mjs"

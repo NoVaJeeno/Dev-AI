@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Shield, Eye, EyeOff, Lock, Zap, Terminal, Code, ChevronRight } from 'lucide-react-native';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 import { useAuth } from '@/providers/AuthProvider';
 import { router } from 'expo-router';
 

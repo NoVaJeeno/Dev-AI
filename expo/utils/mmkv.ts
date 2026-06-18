@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { AppState, AppStateStatus } from 'react-native';
+import { AppState, AppStateStatus, Platform } from 'react-native';
 
 const cache = new Map<string, string>();
 let initialized = false;
@@ -33,7 +33,7 @@ async function init() {
     initialized = true;
     console.log('[MMKV] Initialized with', cache.size, 'keys');
 
-    if (!appStateListener) {
+    if (!appStateListener && Platform.OS !== 'web') {
       appStateListener = AppState.addEventListener('change', handleAppStateChange);
     }
   } catch (e) {

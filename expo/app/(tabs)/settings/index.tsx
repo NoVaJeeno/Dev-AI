@@ -38,7 +38,7 @@ import { useStorage } from '@/providers/StorageProvider';
 import { useConnectionGuard } from '@/providers/ConnectionGuard';
 import { theme } from '@/constants/theme';
 import { mmkv } from '@/utils/mmkv';
-import * as Haptics from 'expo-haptics';
+import { Haptics } from '@/utils/haptics';
 
 const BRIDGE_CONFIG_KEY = 'bridge:config';
 const BRIDGE_STATUS_KEY = 'bridge:status';
