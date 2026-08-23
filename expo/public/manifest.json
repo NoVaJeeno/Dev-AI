@@ -1,0 +1,15 @@
+{
+  "name": "DevAI Studio - Full-Stack Developer App",
+  "short_name": "DevAI",
+  "description": "AI-powered full-stack development environment with 3 intelligent agents, terminal, build & deploy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06080d",
+  "theme_color": "#06080d",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {"src": "/assets/images/icon.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/assets/images/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+  ]
+}

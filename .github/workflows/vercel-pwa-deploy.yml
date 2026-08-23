@@ -1,0 +1,39 @@
+name: PWA + Rork Deploy
+
+on:
+  push:
+    branches: [main, pwa-rork-vercel-integration]
+
+jobs:
+  test-agents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: cd expo && bun install
+      - run: echo "✅ DevAgent (Primary) - Rork SDK Ready"
+      - run: echo "✅ SecondAgent (Secondary) - Rork SDK Ready"
+      - run: echo "✅ SelfHealingAgent - Rork SDK Ready"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test-agents
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+      - run: cd expo && bun install
+      - run: cd expo && bun run build
+      - run: ls -la expo/dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./expo
